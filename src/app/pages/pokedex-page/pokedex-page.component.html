@@ -1,0 +1,7 @@
+<div>
+  <app-pokemon-detail [selectedPokemon]="selectedPokemon"></app-pokemon-detail>
+  <app-pokemon-list
+    [pokemons]="pokemons"
+    (pokemonSelected)="onPokemonSelected($event)"
+  ></app-pokemon-list>
+</div>

@@ -1,0 +1,15 @@
+<div *ngIf="selectedPokemon" class="row">
+  <div class="col s12 m8 offset-m2 center">
+    <h2 class="header">{{ selectedPokemon.name }}</h2>
+    <div class="card">
+      <img
+        [src]="selectedPokemon.picture"
+        alt="{{ selectedPokemon.name }}"
+        width="200"
+        height="200"
+      />
+      <h3>{{ selectedPokemon.name }}</h3>
+      <p>{{ selectedPokemon.description }}</p>
+    </div>
+  </div>
+</div>

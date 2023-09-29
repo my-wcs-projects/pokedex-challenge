@@ -1,0 +1,64 @@
+<div class="container">
+  <h4 class="center">Créer un nouveau Pokémon</h4>
+  <form [formGroup]="pokemonForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col s8 offset-s2">
+        <div class="card-panel">
+          <div class="input-field">
+            <label for="nom">Nom du Pokémon</label>
+            <input
+              type="text"
+              id="nom"
+              formControlName="nom"
+              required
+              class="validate"
+            />
+            <div
+              *ngIf="
+                pokemonForm.get('nom')?.hasError('required') &&
+                pokemonForm.get('nom')?.touched
+              "
+            >
+              <span class="red-text">Le nom du Pokémon est requis</span>
+            </div>
+          </div>
+          <div class="input-field">
+            <label for="image">URL de l'image</label>
+            <input
+              type="text"
+              id="image"
+              formControlName="image"
+              required
+              class="validate"
+            />
+            <div
+              *ngIf="
+                pokemonForm.get('image')?.hasError('required') &&
+                pokemonForm.get('image')?.touched
+              "
+            >
+              <span class="red-text">L'image du Pokémon est requise</span>
+            </div>
+          </div>
+          <div class="input-field">
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              formControlName="description"
+              class="materialize-textarea"
+            ></textarea>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="waves-effect waves-light btn"
+              [disabled]="!pokemonForm.valid"
+            >
+              Ajouter
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
